@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор розрахунку митних платижів для легкових автомобілів</title>
+
+    <meta name="robots" content="none">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Калькулятор розрахунку митних платижів для легкових автомобілів">
+    <meta property="og:description" content="">
+    <meta property="og:imege" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="BROKERDRAIVE">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="Author" content="Dudko Sergii">
+    <meta name="Copyright" content="Dudko Sergii">
+    <meta name="Address" content="Vinnytsia - 0976984680">
+</head>
+<body>
+    
+    <div class="main-page">
+        <form calculatorForm>
+            <div class="wrapper">
+                <div class="form">
+                    <select name="format" id="dv" required>
+                        <option selected disabled></option>
+                        <option value="Бензин">Бензин</option>
+                        <option value="Дизель">Дизель</option>
+                    </select>
+                    <div class="form-type">Тип двигуна</div>   
+                </div>
+                <br>
+                <div class="form">
+                    <select type="format" id="rik" required>
+                        <option value></option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="">Старше</option>  
+                    </select>
+                    <div class="form-rik">Рік виготовлення</div>
+                </div>
+                <br>
+                <div class="form-input">
+                    <input type="text" id="obym" required onchange="fetchCurrencyRate()">
+                    <div class="form-obym">Обєм двигуна в см3</div>
+                </div>
+                <br>
+                <div class="form">
+                    <select type="format" id="val" required>
+                        <option value=""></option>
+                        <option value="USD - Доллар США">USD - Доллар США</option>
+                        <option value="EUR - Евро">EUR - Евро</option>
+                        <option value="PLN - Польский Злотый">PLN - Польский Злотый</option>  
+                    </select>
+                    <div class="form-valyuta">Валюта по інвойсу</div>
+                </div>
+                <br>
+                <div class="form-input">
+                    <input type="text" id="prs" required>
+                    <div class="form-price">Ціна по інвойсу</div>
+                </div>
+                <br>
+                <div class="form-button">
+                    <div>
+                        <button class="button-roz" type="button" onclick="calculateTotal()">Розрахувати</button>
+                        
+                    </div>
+                    <br>
+                    <div>
+                        <button class="button-ochys" type="reset">Очистити</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="wrapper-resuit">
+                <div class="date">
+                    <input id="data" type="text" required>
+                    <div class="data-lebel">Дата розрахунку</div>
+                </div>
+                <div class="course">
+                    <input id="kursValue" type="text" required>
+                    <div class="course-lebel">Курс</div>
+                </div>
+                <div class="result-valyuta">
+                    <input id="resValue" type="text" required>
+                    <div class="result-valyuta-lebel">Сума проплати в євро</div>
+                </div>
+                <div class="result-grn">
+                    <input id="resGrn" type="text" required>
+                    <div class="result-grn-lebel">Сума проплати в гривнях</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+     
+</body>
+</html>
